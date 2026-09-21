@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { profile } from '../data/content'
 import { Reveal } from './ui/Reveal'
-import { ArrowRight, Mail, Phone, MapPin, Sparkles } from './ui/Icons'
+import { ArrowRight, Mail, Phone, MapPin } from './ui/Icons'
 
 export default function Contact() {
   const items = [
@@ -28,10 +28,6 @@ export default function Contact() {
 
       <div className="relative mx-auto max-w-[1320px] px-5 sm:px-6 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl border border-white/[0.09] bg-gradient-to-b from-white/[0.05] to-transparent px-6 py-14 text-center sm:px-10 lg:px-16 lg:py-20">
-          {/* orbiting sparkles */}
-          <Sparkles className="anim-twinkle absolute top-8 left-[12%] h-4 w-4 text-[#4d86ff]" />
-          <Sparkles className="anim-twinkle absolute right-[14%] bottom-10 h-5 w-5 text-[#6fb4ff] [animation-delay:1.2s]" />
-
           <Reveal>
             <span className="eyebrow">Let's work together</span>
           </Reveal>
@@ -80,7 +76,7 @@ export default function Contact() {
                     <Icon className="h-[1.1rem] w-[1.1rem]" strokeWidth={1.7} />
                   </span>
                   <span className="min-w-0 text-left">
-                    <span className="block text-[0.68rem] tracking-[0.2em] text-[#8f9ec4] uppercase">
+                    <span className="block text-[0.68rem] tracking-[0.2em] text-[#9fb0d8] uppercase">
                       {item.label}
                     </span>
                     <span className="block truncate text-[0.9rem] text-white">{item.value}</span>

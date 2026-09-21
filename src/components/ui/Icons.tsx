@@ -19,7 +19,6 @@ import {
   Phone,
   Rocket,
   Server,
-  Sparkles,
 } from 'lucide-react'
 
 type P = { className?: string }
@@ -83,5 +82,5 @@ export const pillIcons = {
   gear: Cog,
 } as const
 
-export { Mail, Phone, MapPin, Sparkles, ExternalLink }
+export { Mail, Phone, MapPin, ExternalLink }
 export { ArrowRight, X as Close } from 'lucide-react'

@@ -13,7 +13,7 @@ export default function Footer() {
                 {profile.initials}
               </span>
               <span className="font-display text-[1.05rem] font-semibold tracking-tight">
-                {profile.first} <span className="text-[#4d86ff]">{profile.last}</span>
+                {profile.first} <span className="text-[#6fb4ff]">{profile.last}</span>
               </span>
             </a>
 

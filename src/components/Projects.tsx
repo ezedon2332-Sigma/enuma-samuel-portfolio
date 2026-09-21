@@ -137,7 +137,7 @@ export default function Projects() {
                   {...(external(p.href)
                     ? { target: '_blank', rel: 'noreferrer noopener' }
                     : {})}
-                  className="mt-6 inline-flex items-center gap-2 text-[0.85rem] font-medium text-[#4d86ff] transition-colors after:absolute after:inset-0 after:content-[''] group-hover:text-[#8fc0ff]"
+                  className="mt-6 inline-flex items-center gap-2 text-[0.85rem] font-medium text-[#6fb4ff] transition-colors after:absolute after:inset-0 after:content-[''] group-hover:text-[#8fc0ff]"
                 >
                   {p.cta}
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />

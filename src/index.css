@@ -13,6 +13,9 @@
   --color-blue-2: #4d86ff;
   --color-blue-3: #0b3fd4;
   --color-cyan: #6fb4ff;
+  /* #1d5cff and #4d86ff are decoration only — borders, icons, glows.
+     Blue *text* uses this, which clears AA on every surface here. */
+  --color-blue-text: #6fb4ff;
 
   --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
   --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
@@ -78,7 +81,7 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(100deg, #4d86ff 0%, #1d5cff 45%, #6fb4ff 100%);
+    background: linear-gradient(100deg, #9ec8ff 0%, #6fb4ff 45%, #dbeaff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -132,18 +135,6 @@
   }
   50% {
     transform: translateY(-14px);
-  }
-}
-
-@keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.25;
-    transform: scale(0.82) rotate(0deg);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.12) rotate(18deg);
   }
 }
 
@@ -217,9 +208,6 @@
 
 .anim-float {
   animation: float-y 7s ease-in-out infinite;
-}
-.anim-twinkle {
-  animation: twinkle 3.4s ease-in-out infinite;
 }
 .anim-pulse-ring {
   animation: pulse-ring 5s ease-in-out infinite;

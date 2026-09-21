@@ -14,7 +14,7 @@ function Stat({ value, label }: { value: number; label: string }) {
         className="block font-display text-[clamp(1.9rem,4vw,2.7rem)] leading-none font-bold text-white tabular-nums"
       >
         {n}
-        <span className="text-[#4d86ff]">+</span>
+        <span className="text-[#6fb4ff]">+</span>
       </span>
       <span className="mt-2 block text-[0.72rem] tracking-[0.18em] text-[#8f9ec4] uppercase">
         {label}

@@ -1,5 +1,4 @@
 import { marqueeWords } from '../data/content'
-import { Sparkles } from './ui/Icons'
 
 export default function Marquee() {
   const row = [...marqueeWords, ...marqueeWords]
@@ -15,7 +14,7 @@ export default function Marquee() {
             <span className="font-display text-[1.1rem] font-semibold tracking-[-0.01em] whitespace-nowrap text-white/70 sm:text-[1.5rem]">
               {word}
             </span>
-            <Sparkles className="h-3 w-3 shrink-0 text-[#4d86ff] sm:h-3.5 sm:w-3.5" />
+            <span className="h-1 w-1 shrink-0 rounded-full bg-[#2a3a63]" />
           </span>
         ))}
       </div>
