@@ -1,11 +1,16 @@
 import { motion } from 'framer-motion'
 import { profile } from '../data/content'
+
+// a prefilled subject so the draft opens ready to write into
+const MAILTO = `mailto:${profile.email}?subject=${encodeURIComponent(
+  'Project enquiry — from your portfolio',
+)}`
 import { Reveal } from './ui/Reveal'
 import { ArrowRight, Mail, Phone, MapPin } from './ui/Icons'
 
 export default function Contact() {
   const items = [
-    { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
+    { icon: Mail, label: 'Email', value: profile.email, href: MAILTO },
     {
       icon: Phone,
       label: 'Phone',
@@ -48,7 +53,7 @@ export default function Contact() {
           <Reveal delay={0.24}>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
               <a
-                href={`mailto:${profile.email}`}
+                href={MAILTO}
                 className="group relative inline-flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-[#0b3fd4] to-[#3b7bff] px-8 py-4 text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5 glow-blue sm:w-auto"
               >
                 <span className="relative z-10">Contact Now</span>

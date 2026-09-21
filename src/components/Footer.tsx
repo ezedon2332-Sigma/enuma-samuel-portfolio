@@ -88,7 +88,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/[0.07] pt-6 text-[0.8rem] text-[#5f6f99] sm:flex-row">
           <p>© {new Date().getFullYear()} {profile.name}. All rights reserved.</p>
-          <p>Built by hand, obviously.</p>
+          <p>Designed and built in Lagos.</p>
         </div>
       </div>
     </footer>

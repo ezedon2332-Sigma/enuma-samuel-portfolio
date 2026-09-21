@@ -29,7 +29,25 @@ function Card({ project, groupKey }: { project: Project; groupKey: string }) {
     >
       {/* media / generative cover */}
       <div className="relative aspect-[16/10] overflow-hidden bg-[#070b1a]">
-        {p.image ? (
+        {p.image && p.fit === 'contain' ? (
+          // a portrait cover, sat on the same wash the placeholder uses
+          <div className="relative h-full w-full">
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'radial-gradient(120% 90% at 50% 0%, rgba(29,92,255,0.30) 0%, rgba(7,11,26,0) 70%)',
+              }}
+            />
+            <img
+              src={p.image}
+              alt={p.title}
+              loading="lazy"
+              decoding="async"
+              className="relative h-full w-full object-contain p-4 transition-transform duration-700 group-hover:scale-[1.04]"
+            />
+          </div>
+        ) : p.image ? (
           <img
             src={p.image}
             alt={p.title}

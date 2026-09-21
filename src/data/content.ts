@@ -87,6 +87,8 @@ export type Project = {
   /** '#…' scrolls in-page, '/…' is an internal route, anything else opens in a new tab. */
   href: string
   image?: string
+  /** Book covers are portrait — 'contain' stops a 16:10 card cropping them. */
+  fit?: 'cover' | 'contain'
   stack?: string[]
 }
 
@@ -136,6 +138,16 @@ export const projects: Project[] = [
     cta: 'Get the book',
     href: 'https://selar.com/i6hg369015',
     image: '/media/book-final-end-called-happiness.webp',
+    fit: 'contain',
+  },
+  {
+    tag: 'Writing — Published book',
+    title: 'The Complete Dangote Refinery IPO Guide',
+    body: "A plain-English walkthrough of buying shares in Africa's biggest IPO, written for people who have never invested before — which apps to use, how the BVN and CSCS steps actually work, and how to spot the scams that follow an offer like this around.",
+    cta: 'Get the guide',
+    href: 'https://selar.com/75975y8q4v',
+    image: '/media/book-dangote-ipo-guide.webp',
+    fit: 'contain',
   },
   {
     tag: 'Writing',
@@ -162,9 +174,9 @@ export const projects: Project[] = [
 
 export const designWork = [
   { src: '/media/design-nexora-pulse.webp', alt: 'Nexora Pulse X1 — product launch campaign' },
+  { src: '/media/design-final-end-campaign.webp', alt: 'The Final End Called Happiness — book campaign' },
   { src: '/media/design-fips-break-pattern.webp', alt: 'FIPS Real Estate — Break the Pattern' },
   { src: '/media/design-sigma-car-charger.webp', alt: 'Sigma — car charger product ad' },
-  { src: '/media/design-ileri-concrete.webp', alt: 'Ileri Residence — Concrete Structures campaign' },
 ] as const
 
 export const properties = [
