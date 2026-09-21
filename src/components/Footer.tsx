@@ -1,4 +1,5 @@
 import { nav, profile, socials } from '../data/content'
+import { Link } from 'react-router-dom'
 import { socialIcons } from './ui/Icons'
 
 export default function Footer() {
@@ -8,14 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
           {/* identity */}
           <div>
-            <a href="#top" className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3">
               <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-[#0b3fd4] to-[#4d86ff] text-[0.78rem] font-bold text-white">
                 {profile.initials}
               </span>
               <span className="font-display text-[1.05rem] font-semibold tracking-tight">
                 {profile.first} <span className="text-[#6fb4ff]">{profile.last}</span>
               </span>
-            </a>
+            </Link>
 
             <p className="mt-4 max-w-[38ch] text-[0.9rem] text-[#8f9ec4]">
               {profile.tagline}. {profile.location}.
@@ -46,13 +47,13 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5">
               {nav.map((n) => (
                 <li key={n.href}>
-                  <a
-                    href={n.href}
+                  <Link
+                    to={`/${n.href}`}
                     className="group inline-flex items-center gap-2 text-[0.9rem] text-[#8f9ec4] transition-colors hover:text-white"
                   >
                     <span className="h-px w-0 bg-[#4d86ff] transition-all duration-300 group-hover:w-4" />
                     {n.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

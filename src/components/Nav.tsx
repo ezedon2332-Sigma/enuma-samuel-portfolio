@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
+import { Link } from "react-router-dom";
 import { nav, profile, socials } from "../data/content";
 import { useActiveSection } from "../lib/hooks";
 import { socialIcons, Close } from "./ui/Icons";
@@ -53,7 +54,7 @@ export default function Nav() {
       >
         <div className="mx-auto flex max-w-[1320px] items-center justify-between gap-3 px-4 py-3.5 sm:gap-6 sm:px-6 sm:py-4 lg:px-10">
           {/* logo */}
-          <a href="#top" className="group flex items-center gap-3">
+          <Link to="/" className="group flex items-center gap-3">
             <span className="relative grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-[#0b3fd4] to-[#4d86ff] text-[0.78rem] font-bold tracking-wide text-white">
               {profile.initials}
               <span className="absolute inset-0 rounded-full ring-1 ring-white/25 transition-all duration-500 group-hover:scale-125 group-hover:opacity-0" />
@@ -62,7 +63,7 @@ export default function Nav() {
               {profile.first}{" "}
               <span className="text-[#6fb4ff]">{profile.last}</span>
             </span>
-          </a>
+          </Link>
 
           {/* links + burger, grouped right as in the reference */}
           <div className="flex items-center gap-5 lg:gap-8">
@@ -70,9 +71,9 @@ export default function Nav() {
               {nav.map((item) => {
                 const isActive = active === item.href;
                 return (
-                  <a
+                  <Link
                     key={item.href}
-                    href={item.href}
+                    to={`/${item.href}`}
                     className={`relative py-2 text-[0.72rem] font-medium tracking-[0.18em] uppercase transition-colors duration-300 ${
                       isActive
                         ? "text-white"
@@ -91,7 +92,7 @@ export default function Nav() {
                         }}
                       />
                     )}
-                  </a>
+                  </Link>
                 );
               })}
             </nav>
@@ -148,17 +149,20 @@ export default function Nav() {
               </button>
 
               {nav.map((item, i) => (
-                <motion.a
+                <motion.div
                   key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="border-b border-white/[0.06] py-3.5 font-display text-2xl font-semibold text-white/90 transition-colors hover:text-[#6fb4ff]"
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.12 + i * 0.06, duration: 0.5 }}
                 >
-                  {item.label}
-                </motion.a>
+                  <Link
+                    to={`/${item.href}`}
+                    onClick={() => setOpen(false)}
+                    className="block border-b border-white/[0.06] py-3.5 font-display text-2xl font-semibold text-white/90 transition-colors hover:text-[#6fb4ff]"
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
               ))}
 
               <div className="mt-auto flex items-center gap-3 pt-8">

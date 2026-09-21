@@ -84,7 +84,7 @@ export type Project = {
   title: string
   body: string
   cta: string
-  /** Where the CTA goes. '#…' scrolls in-page; anything else opens in a new tab. */
+  /** '#…' scrolls in-page, '/…' is an internal route, anything else opens in a new tab. */
   href: string
   image?: string
   stack?: string[]
@@ -93,51 +93,19 @@ export type Project = {
 export const projects: Project[] = [
   {
     tag: 'Web development',
-    title: 'Food & pharmacy delivery marketplace',
-    body: 'Four-sided marketplace — customers, vendors, riders, admin — with payments, live tracking and offline-tolerant flows.',
-    cta: 'View case study',
-    href: '#contact',
-    stack: ['React', 'Node.js', 'PostgreSQL', 'Paystack'],
+    title: 'Fancy Finery — clothing marketplace',
+    body: 'A single-brand luxury clothing store, built end to end and live. Storefront, admin, self-hosted backend, and two payment providers so customers in Lagos and customers abroad can both pay the way they normally would.',
+    cta: 'Read the case study',
+    href: '/work/fancy-finery',
+    stack: ['Next.js 16', 'React 19', 'PostgreSQL', 'Paystack', 'Stripe'],
   },
   {
     tag: 'Web development',
-    title: 'School management platform',
-    body: 'Multi-tenant portal for results, fees and attendance used by three private schools — built to run on low-end devices.',
-    cta: 'View case study',
-    href: '#contact',
-    stack: ['React', 'Express', 'MySQL'],
-  },
-  {
-    tag: 'Backend',
-    title: 'Payments & wallet API',
-    body: 'Node.js service handling transfers, webhooks and reconciliation with idempotent retries for flaky networks.',
-    cta: 'Architecture notes',
-    href: '#contact',
-    stack: ['Node.js', 'Redis', 'Webhooks'],
-  },
-  {
-    tag: 'Backend',
-    title: 'Offline-first sync engine',
-    body: "Rust sync engine that queues writes locally and reconciles on reconnect — for apps that can't assume connectivity.",
-    cta: 'Read the docs',
-    href: '#contact',
-    stack: ['Rust', 'SQLite', 'CRDT'],
-  },
-  {
-    tag: 'Frontend',
-    title: 'Banking dashboard UI',
-    body: 'React + TypeScript dashboard with charting and role-based views — 90+ Lighthouse score under 3G throttling.',
-    cta: 'View screens',
-    href: '#contact',
-    stack: ['React', 'TypeScript', 'D3'],
-  },
-  {
-    tag: 'Frontend',
-    title: 'E-commerce storefront rebuild',
-    body: 'Migrated a jQuery store to a component system — cut bundle size 62% and doubled mobile conversion.',
-    cta: 'Before / after',
-    href: '#contact',
-    stack: ['React', 'Vite', 'Tailwind'],
+    title: 'This portfolio site',
+    body: 'The site you are on. Rebuilt from a single 1MB HTML file into a React app, with a WebGL hero that stays out of the way until the page is usable — and turns itself off entirely for anyone who asks for less motion.',
+    cta: 'Read the case study',
+    href: '/work/portfolio',
+    stack: ['React 19', 'Vite', 'Tailwind v4', 'Three.js'],
   },
   {
     tag: 'Writing — Published book',

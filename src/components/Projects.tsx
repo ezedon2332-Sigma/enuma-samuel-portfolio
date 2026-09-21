@@ -1,13 +1,18 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { projects } from '../data/content'
 import { Section, SectionHead } from './ui/Section'
 import { ArrowRight, ExternalLink } from './ui/Icons'
 
 const EASE = [0.16, 1, 0.3, 1] as const
 
-/** In-page anchors stay in the tab; anything else opens in a new one. */
-const external = (href: string) => !href.startsWith('#')
+/** '#…' scrolls in-page, '/…' routes internally, anything else leaves the site. */
+const external = (href: string) => !href.startsWith('#') && !href.startsWith('/')
+
+// stretched so the whole card is the hit area, not just this row
+const ctaClass =
+  "mt-6 inline-flex items-center gap-2 text-[0.85rem] font-medium text-[#6fb4ff] transition-colors after:absolute after:inset-0 after:content-[''] group-hover:text-[#8fc0ff]"
 
 export default function Projects() {
   const groups = useMemo(() => {
@@ -131,18 +136,24 @@ export default function Projects() {
                   </ul>
                 )}
 
-                {/* stretched so the whole card is the hit area, not just this row */}
-                <a
-                  href={p.href}
-                  {...(external(p.href)
-                    ? { target: '_blank', rel: 'noreferrer noopener' }
-                    : {})}
-                  className="mt-6 inline-flex items-center gap-2 text-[0.85rem] font-medium text-[#6fb4ff] transition-colors after:absolute after:inset-0 after:content-[''] group-hover:text-[#8fc0ff]"
-                >
-                  {p.cta}
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-                  {external(p.href) && <ExternalLink className="h-3 w-3 opacity-70" />}
-                </a>
+                {p.href.startsWith('/') ? (
+                  <Link to={p.href} className={ctaClass}>
+                    {p.cta}
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+                  </Link>
+                ) : (
+                  <a
+                    href={p.href}
+                    {...(external(p.href)
+                      ? { target: '_blank', rel: 'noreferrer noopener' }
+                      : {})}
+                    className={ctaClass}
+                  >
+                    {p.cta}
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+                    {external(p.href) && <ExternalLink className="h-3 w-3 opacity-70" />}
+                  </a>
+                )}
               </div>
             </motion.article>
           ))}
