@@ -6,9 +6,11 @@ import {
   Blocks,
   Code2,
   Cog,
+  ExternalLink,
   House,
   Mail,
   MapPin,
+  MessageCircle,
   MessagesSquare,
   MonitorSmartphone,
   Palette,
@@ -53,6 +55,7 @@ export const socialIcons = {
   github: Github,
   linkedin: Linkedin,
   x: XIcon,
+  whatsapp: MessageCircle,
   mail: Mail,
 } as const
 
@@ -80,5 +83,5 @@ export const pillIcons = {
   gear: Cog,
 } as const
 
-export { Mail, Phone, MapPin, Sparkles }
+export { Mail, Phone, MapPin, Sparkles, ExternalLink }
 export { ArrowRight, X as Close } from 'lucide-react'

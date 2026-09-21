@@ -60,9 +60,9 @@ export default function Contact() {
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               </a>
               <a
-                href={`https://wa.me/${profile.phones[0].replace(/[^0-9]/g, '')}`}
+                href={profile.whatsapp}
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#28365f] px-8 py-4 text-sm font-medium text-[#dbe5ff] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#4d86ff] hover:bg-[#4d86ff]/10 sm:w-auto"
               >
                 WhatsApp

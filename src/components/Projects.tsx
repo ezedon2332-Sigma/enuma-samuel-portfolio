@@ -2,9 +2,12 @@ import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { projects } from '../data/content'
 import { Section, SectionHead } from './ui/Section'
-import { ArrowRight } from './ui/Icons'
+import { ArrowRight, ExternalLink } from './ui/Icons'
 
 const EASE = [0.16, 1, 0.3, 1] as const
+
+/** In-page anchors stay in the tab; anything else opens in a new one. */
+const external = (href: string) => !href.startsWith('#')
 
 export default function Projects() {
   const groups = useMemo(() => {
@@ -68,7 +71,7 @@ export default function Projects() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -16, scale: 0.97 }}
               transition={{ duration: 0.55, ease: EASE }}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-white/[0.04] to-transparent transition-colors duration-500 hover:border-[#4d86ff]/40"
+              className="group relative isolate flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-white/[0.04] to-transparent transition-colors duration-500 focus-within:border-[#4d86ff]/60 hover:border-[#4d86ff]/40"
             >
               {/* media / generative cover */}
               <div className="relative aspect-[16/10] overflow-hidden bg-[#070b1a]">
@@ -128,10 +131,18 @@ export default function Projects() {
                   </ul>
                 )}
 
-                <span className="mt-6 inline-flex items-center gap-2 text-[0.85rem] font-medium text-[#4d86ff] transition-colors group-hover:text-[#8fc0ff]">
+                {/* stretched so the whole card is the hit area, not just this row */}
+                <a
+                  href={p.href}
+                  {...(external(p.href)
+                    ? { target: '_blank', rel: 'noreferrer noopener' }
+                    : {})}
+                  className="mt-6 inline-flex items-center gap-2 text-[0.85rem] font-medium text-[#4d86ff] transition-colors after:absolute after:inset-0 after:content-[''] group-hover:text-[#8fc0ff]"
+                >
                   {p.cta}
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-                </span>
+                  {external(p.href) && <ExternalLink className="h-3 w-3 opacity-70" />}
+                </a>
               </div>
             </motion.article>
           ))}

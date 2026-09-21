@@ -12,6 +12,8 @@ export const profile = {
     'I build modern, responsive products and write the words that sell them. Six disciplines under one roof — hire one, or let them work together on your project.',
   blurb:
     'Writer, real estate agent, full-stack developer and creative designer. Six skills, one accountable person.',
+  whatsapp:
+    "https://wa.me/2348154018772?text=Hi%20Samuel%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20talk.",
 } as const
 
 export const nav = [
@@ -24,10 +26,19 @@ export const nav = [
   { label: 'Contact', href: '#contact' },
 ] as const
 
+// Only links with a real destination belong here — a placeholder that lands on
+// github.com's homepage is worse than no icon at all.
+//
+// TODO: add the real handles and uncomment. The icons are already wired up:
+//   { label: 'GitHub',   href: 'https://github.com/<handle>',      icon: 'github' },
+//   { label: 'LinkedIn', href: 'https://linkedin.com/in/<handle>', icon: 'linkedin' },
+//   { label: 'X',        href: 'https://x.com/<handle>',           icon: 'x' },
 export const socials = [
-  { label: 'GitHub', href: 'https://github.com/', icon: 'github' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/', icon: 'linkedin' },
-  { label: 'X', href: 'https://x.com/', icon: 'x' },
+  {
+    label: 'WhatsApp',
+    href: "https://wa.me/2348154018772?text=Hi%20Samuel%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20talk.",
+    icon: 'whatsapp',
+  },
   { label: 'Email', href: 'mailto:enumadonald67@gmail.com', icon: 'mail' },
 ] as const
 
@@ -82,6 +93,8 @@ export type Project = {
   title: string
   body: string
   cta: string
+  /** Where the CTA goes. '#…' scrolls in-page; anything else opens in a new tab. */
+  href: string
   image?: string
   stack?: string[]
 }
@@ -92,6 +105,7 @@ export const projects: Project[] = [
     title: 'Food & pharmacy delivery marketplace',
     body: 'Four-sided marketplace — customers, vendors, riders, admin — with payments, live tracking and offline-tolerant flows.',
     cta: 'View case study',
+    href: '#contact',
     stack: ['React', 'Node.js', 'PostgreSQL', 'Paystack'],
   },
   {
@@ -99,6 +113,7 @@ export const projects: Project[] = [
     title: 'School management platform',
     body: 'Multi-tenant portal for results, fees and attendance used by three private schools — built to run on low-end devices.',
     cta: 'View case study',
+    href: '#contact',
     stack: ['React', 'Express', 'MySQL'],
   },
   {
@@ -106,6 +121,7 @@ export const projects: Project[] = [
     title: 'Payments & wallet API',
     body: 'Node.js service handling transfers, webhooks and reconciliation with idempotent retries for flaky networks.',
     cta: 'Architecture notes',
+    href: '#contact',
     stack: ['Node.js', 'Redis', 'Webhooks'],
   },
   {
@@ -113,6 +129,7 @@ export const projects: Project[] = [
     title: 'Offline-first sync engine',
     body: "Rust sync engine that queues writes locally and reconciles on reconnect — for apps that can't assume connectivity.",
     cta: 'Read the docs',
+    href: '#contact',
     stack: ['Rust', 'SQLite', 'CRDT'],
   },
   {
@@ -120,6 +137,7 @@ export const projects: Project[] = [
     title: 'Banking dashboard UI',
     body: 'React + TypeScript dashboard with charting and role-based views — 90+ Lighthouse score under 3G throttling.',
     cta: 'View screens',
+    href: '#contact',
     stack: ['React', 'TypeScript', 'D3'],
   },
   {
@@ -127,6 +145,7 @@ export const projects: Project[] = [
     title: 'E-commerce storefront rebuild',
     body: 'Migrated a jQuery store to a component system — cut bundle size 62% and doubled mobile conversion.',
     cta: 'Before / after',
+    href: '#contact',
     stack: ['React', 'Vite', 'Tailwind'],
   },
   {
@@ -134,6 +153,7 @@ export const projects: Project[] = [
     title: 'The Final End Called Happiness',
     body: 'A book by E.E. Donald — “an end that reveals the beauty of becoming whole.” Written and published end to end: manuscript, editing and cover direction.',
     cta: 'Get the book',
+    href: 'https://selar.com/i6hg369015',
     image: '/media/book-final-end-called-happiness.webp',
   },
   {
@@ -141,18 +161,21 @@ export const projects: Project[] = [
     title: 'Fintech content & product copy',
     body: 'Blog posts, landing pages and in-app copy for two payments startups — compliance-heavy topics in plain language.',
     cta: 'Request samples',
+    href: '#contact',
   },
   {
     tag: 'Real estate',
     title: 'Lekki & Ajah residential sales',
     body: 'Off-plan apartments, land banking and rentals — every deal closed with verified titles and documentation support.',
     cta: 'See the portfolio',
+    href: '#properties',
   },
   {
     tag: 'Real estate',
     title: 'Diaspora buyer packages',
     body: 'End-to-end purchase management: inspection videos, legal verification and staged payment tracking for clients abroad.',
     cta: 'See the portfolio',
+    href: '#properties',
   },
 ]
 
