@@ -30,7 +30,7 @@ export default function Specialities() {
         eyebrow="Speciality"
         title="My "
         accent="specialities"
-        body="Four disciplines under one roof — hire one, or let them work together on your project."
+        body="Four things I do properly. Pick the one you need, or let them work together on your project."
       />
 
       <Stagger className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-16 lg:gap-5">

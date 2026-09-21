@@ -59,23 +59,23 @@ export const specialities = [
   {
     icon: 'writing',
     title: 'Writing',
-    body: 'Essays, articles and product copy that make complicated things simple — fintech explainers to long-form stories.',
+    body: 'I enjoy taking something tangled and making it read simply — articles, essays, or the words inside a product. The aim is that you finish reading and actually know what I meant.',
   },
   {
     icon: 'realEstate',
     title: 'Real Estate',
-    body: 'Lagos sales, rentals and land with verified documentation — plus full remote purchase management for diaspora buyers.',
+    body: "I help people find homes and land around Lagos, with the paperwork properly checked before anyone commits. Buying from abroad? I'll handle the viewings and the running around for you.",
   },
   {
     icon: 'webDev',
     title: 'Web Development',
-    body: 'Complete products end to end — marketplaces, dashboards and portals. React and TypeScript interfaces that stay smooth on a ₦40k Android over 3G, on APIs, databases and payment systems built for unreliable networks: idempotent, offline-tolerant, dependable.',
+    body: "I build the whole thing, front to back — sites, dashboards and marketplaces. They're made to stay quick on an ordinary phone and a shaky connection, because that's what most people are actually using.",
     tags: ['Full-stack', 'Frontend', 'Backend'],
   },
   {
     icon: 'design',
     title: 'Creative Design',
-    body: 'Brand identities, UI kits and design systems with a point of view — intentional, never templated.',
+    body: "Brand identities, UI kits and design systems that look like somebody made a decision. I'd rather hand you something with a point of view than another template.",
   },
 ] as const
 
