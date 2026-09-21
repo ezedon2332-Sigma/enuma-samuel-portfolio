@@ -21,6 +21,8 @@ export type CaseStudy = {
   stack: string[]
   links: { label: string; href: string }[]
   facts: { label: string; value: string }[]
+  /** Screenshot of the live site, shown under the header. */
+  cover: string
   intro: string
   sections: Section[]
 }
@@ -57,6 +59,7 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Currencies', value: 'NGN, USD, EUR, GBP' },
       { label: 'Status', value: 'Live' },
     ],
+    cover: '/media/preview-fancy-finery.webp',
     intro:
       'Fancy Finery is a clothing brand that sells to customers in Nigeria and to Nigerians living abroad. Those two groups pay for things in completely different ways, and most store platforms make you pick one of them. I built the whole shop instead — the storefront people browse, the admin section the brand runs it from, and the servers underneath.',
     sections: [
@@ -153,6 +156,7 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Contrast fix', value: '3.19:1 → 8.8:1' },
       { label: 'Status', value: 'Live' },
     ],
+    cover: '/media/preview-portfolio.webp',
     intro:
       'The previous version of this site was a single HTML file just over a megabyte in size, with thirty-two photographs pasted directly into the markup as text. It worked. It was also impossible to change one thing without scrolling through everything, and every visitor downloaded every image before seeing anything.',
     sections: [

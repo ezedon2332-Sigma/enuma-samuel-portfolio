@@ -97,9 +97,24 @@ export default function CaseStudy() {
           </div>
         </motion.header>
 
+        {/* ---------- cover ---------- */}
+        <Reveal delay={0.08}>
+          <figure className="mt-12 overflow-hidden rounded-2xl border border-white/[0.08]">
+            <img
+              src={study.cover}
+              alt={`Screenshot of ${study.title}`}
+              loading="lazy"
+              decoding="async"
+              width={1440}
+              height={900}
+              className="block w-full"
+            />
+          </figure>
+        </Reveal>
+
         {/* ---------- facts strip ---------- */}
         <Reveal delay={0.1}>
-          <dl className="mt-14 grid grid-cols-2 gap-x-6 gap-y-7 border-y border-white/[0.08] py-8 sm:grid-cols-4">
+          <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-7 border-y border-white/[0.08] py-8 sm:grid-cols-4">
             {study.facts.map((f) => (
               <div key={f.label}>
                 <dt className="text-[0.62rem] font-medium tracking-[0.2em] text-[#8f9ec4] uppercase">

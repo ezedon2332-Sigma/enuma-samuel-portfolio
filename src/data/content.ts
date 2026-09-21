@@ -90,6 +90,26 @@ export type Project = {
   stack?: string[]
 }
 
+/** The rows in Recent work, in the order they appear. `key` matches the
+ *  leading part of a project's `tag`. */
+export const projectGroups = [
+  {
+    key: 'Web development',
+    label: 'Web development',
+    note: 'Built end to end and running in production — both have a write-up.',
+  },
+  {
+    key: 'Writing',
+    label: 'Writing',
+    note: 'Long-form and product copy, published under my own name and for others.',
+  },
+  {
+    key: 'Real estate',
+    label: 'Real estate',
+    note: 'Sales and buyer management across Lagos, documents verified before anyone commits.',
+  },
+] as const
+
 export const projects: Project[] = [
   {
     tag: 'Web development',
@@ -97,6 +117,7 @@ export const projects: Project[] = [
     body: 'A single-brand luxury clothing store, built end to end and live. Storefront, admin, self-hosted backend, and two payment providers so customers in Lagos and customers abroad can both pay the way they normally would.',
     cta: 'Read the case study',
     href: '/work/fancy-finery',
+    image: '/media/preview-fancy-finery.webp',
     stack: ['Next.js 16', 'React 19', 'PostgreSQL', 'Paystack', 'Stripe'],
   },
   {
@@ -105,6 +126,7 @@ export const projects: Project[] = [
     body: 'The site you are on. Rebuilt from a single 1MB HTML file into a React app, with a WebGL hero that stays out of the way until the page is usable — and turns itself off entirely for anyone who asks for less motion.',
     cta: 'Read the case study',
     href: '/work/portfolio',
+    image: '/media/preview-portfolio.webp',
     stack: ['React 19', 'Vite', 'Tailwind v4', 'Three.js'],
   },
   {
