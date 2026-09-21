@@ -76,16 +76,28 @@ export function Stagger({
   )
 }
 
-/** Splits a string into words that rise into place one after another. */
+/**
+ * Splits a string into words that rise into place one after another.
+ *
+ * `wordClassName` lands on the element that actually holds each word. A
+ * gradient (background-clip: text) has to sit there: put it on the wrapper and
+ * the animated spans' transforms create a new containing block, so the clipped
+ * background never paints over them while `color: transparent` still inherits
+ * down — leaving the text invisible.
+ */
 export function SplitWords({
   text,
   className = '',
+  wordClassName = '',
   delay = 0,
 }: {
   text: string
   className?: string
+  wordClassName?: string
   delay?: number
 }) {
+  const words = text.split(' ').filter(Boolean)
+
   return (
     <motion.span
       className={className}
@@ -95,10 +107,10 @@ export function SplitWords({
       variants={{ show: { transition: { staggerChildren: 0.055, delayChildren: delay } } }}
       aria-label={text}
     >
-      {text.split(' ').map((w, i) => (
+      {words.map((w, i) => (
         <span key={`${w}-${i}`} className="inline-block overflow-hidden align-bottom">
           <motion.span
-            className="inline-block"
+            className={`inline-block ${wordClassName}`}
             aria-hidden
             variants={{
               hidden: { y: '110%', opacity: 0 },
@@ -106,7 +118,7 @@ export function SplitWords({
             }}
           >
             {w}
-            {' '}
+            {'\u00A0'}
           </motion.span>
         </span>
       ))}

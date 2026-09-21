@@ -43,7 +43,7 @@ export function SectionHead({
 
       <h2 className="mt-4 font-display text-[clamp(1.9rem,4.4vw,3.1rem)] leading-[1.06] font-bold tracking-[-0.025em]">
         <SplitWords text={title} />
-        {accent && <SplitWords text={accent} className="text-gradient" delay={0.12} />}
+        {accent && <SplitWords text={accent} wordClassName="text-gradient" delay={0.12} />}
       </h2>
 
       {body && (
