@@ -150,13 +150,6 @@ export const projects: Project[] = [
     fit: 'contain',
   },
   {
-    tag: 'Writing',
-    title: 'Fintech content & product copy',
-    body: 'Blog posts, landing pages and in-app copy for two payments startups — compliance-heavy topics in plain language.',
-    cta: 'Request samples',
-    href: '#contact',
-  },
-  {
     tag: 'Real estate',
     title: 'Lekki & Ajah residential sales',
     body: 'Off-plan apartments, land banking and rentals — every deal closed with verified titles and documentation support.',
