@@ -163,37 +163,19 @@ export const projects: Project[] = [
 export const designWork = [
   { src: '/media/design-fancy-finery.webp', alt: 'Fancy Finery — fashion brand flyer' },
   { src: '/media/design-nexora-pulse.webp', alt: 'Nexora Pulse X1 — product launch campaign' },
-  { src: '/media/design-editorial-composite.webp', alt: 'Editorial photo composite' },
-  { src: '/media/design-fips-break-pattern.webp', alt: 'FIPS Real Estate — Break the Pattern' },
-  { src: '/media/design-fips-support.webp', alt: 'FIPS Real Estate — support campaign' },
-  { src: '/media/design-fips-welcome-july.webp', alt: 'FIPS Real Estate — Welcome to July' },
-  { src: '/media/design-ileri-sales-incentive.webp', alt: 'Ileri Residence — sales incentive' },
-  { src: '/media/design-fips-monday.webp', alt: 'FIPS Real Estate — Monday series' },
-  { src: '/media/design-ileri-amenities.webp', alt: 'Ileri Residence — amenities creative' },
   { src: '/media/design-sigma-car-charger.webp', alt: 'Sigma — car charger product ad' },
-  { src: '/media/design-ileri-eco-choices.webp', alt: 'Ileri Residence — Eco Choices campaign' },
-  { src: '/media/design-ileri-concrete.webp', alt: 'Ileri Residence — Concrete Structures campaign' },
+  { src: '/media/design-ileri-amenities.webp', alt: 'Ileri Residence — amenities creative' },
 ] as const
 
 export const properties = [
   { src: '/media/prop-apartment-exterior.webp', alt: 'Apartment development — exterior' },
-  { src: '/media/prop-semi-detached-duplex.webp', alt: 'Semi-detached duplex — exterior' },
   { src: '/media/prop-detached-duplex.webp', alt: 'Detached duplex — exterior' },
-  { src: '/media/prop-living-tray-ceiling.webp', alt: 'Living area — tray ceiling & marble tiles' },
+  { src: '/media/prop-semi-detached-duplex.webp', alt: 'Semi-detached duplex — exterior' },
   { src: '/media/prop-living-chandelier.webp', alt: 'Living room — chandelier & marble floors' },
   { src: '/media/prop-open-plan-living.webp', alt: 'Open-plan living space' },
-  { src: '/media/prop-living-finished.webp', alt: 'Living area — finished interiors' },
   { src: '/media/prop-kitchen-island.webp', alt: 'Fitted kitchen — island & marble splashback' },
   { src: '/media/prop-bedroom-corner-windows.webp', alt: 'Bedroom — marble floors, corner windows' },
-  { src: '/media/prop-bedroom-tray-ceiling.webp', alt: 'Bedroom — tray ceiling' },
-  { src: '/media/prop-balcony-walkway.webp', alt: 'Balcony walkway' },
   { src: '/media/prop-master-bath-tub.webp', alt: 'Master bath — freestanding tub' },
-  { src: '/media/prop-bath-glass-shower.webp', alt: 'Bathroom — glass shower enclosure' },
-  { src: '/media/prop-shower-matte-black.webp', alt: 'Shower cubicle — matte black fittings' },
-  { src: '/media/prop-bath-3d-tiles.webp', alt: 'Bathroom — 3D feature tiles' },
-  { src: '/media/prop-bath-rainfall.webp', alt: 'Bathroom — rainfall shower' },
-  { src: '/media/prop-guest-toilet.webp', alt: 'Guest toilet — vessel sink' },
-  { src: '/media/prop-wall-hung-wc.webp', alt: 'Wall-hung WC — concealed cistern' },
 ] as const
 
 export const processSteps = [
