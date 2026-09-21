@@ -9,9 +9,9 @@ export const profile = {
   tagline: 'Writer · Realtor · Developer · Designer',
   roles: ['Writer', 'Real Estate Agent', 'Full-Stack Developer', 'Creative Designer'],
   intro:
-    'I build modern, responsive products and write the words that sell them. Six disciplines under one roof — hire one, or let them work together on your project.',
+    'I build modern, responsive products and write the words that sell them. Four disciplines under one roof — hire one, or let them work together on your project.',
   blurb:
-    'Writer, real estate agent, full-stack developer and creative designer. Six skills, one accountable person.',
+    'Writer, real estate agent, full-stack developer and creative designer. Four skills, one accountable person.',
   whatsapp:
     "https://wa.me/2348154018772?text=Hi%20Samuel%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20talk.",
 } as const
@@ -43,7 +43,7 @@ export const socials = [
 ] as const
 
 export const heroStats = [
-  { value: 6, label: 'Disciplines' },
+  { value: 4, label: 'Disciplines' },
   { value: 10, label: 'Shipped projects' },
   { value: 12, label: 'Design campaigns' },
   { value: 18, label: 'Properties handled' },
@@ -69,17 +69,8 @@ export const specialities = [
   {
     icon: 'webDev',
     title: 'Web Development',
-    body: 'Complete products end to end — marketplaces, dashboards and portals built for real Nigerian network conditions.',
-  },
-  {
-    icon: 'frontend',
-    title: 'Frontend',
-    body: 'React and TypeScript interfaces that stay smooth on a ₦40k Android over 3G — not just a MacBook on fibre.',
-  },
-  {
-    icon: 'backend',
-    title: 'Backend',
-    body: 'APIs, databases and payment systems built for unreliable networks — idempotent, offline-tolerant, dependable.',
+    body: 'Complete products end to end — marketplaces, dashboards and portals. React and TypeScript interfaces that stay smooth on a ₦40k Android over 3G, on APIs, databases and payment systems built for unreliable networks: idempotent, offline-tolerant, dependable.',
+    tags: ['Full-stack', 'Frontend', 'Backend'],
   },
   {
     icon: 'design',
@@ -240,8 +231,7 @@ export const marqueeWords = [
   'Writing',
   'Real Estate',
   'Web Development',
-  'Frontend',
-  'Backend',
+  'Full-stack',
   'Creative Design',
   'Brand Identity',
   'Product Copy',

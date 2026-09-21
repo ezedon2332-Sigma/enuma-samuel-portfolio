@@ -30,10 +30,10 @@ export default function Specialities() {
         eyebrow="Speciality"
         title="My "
         accent="specialities"
-        body="Six disciplines under one roof — hire one, or let them work together on your project."
+        body="Four disciplines under one roof — hire one, or let them work together on your project."
       />
 
-      <Stagger className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-5">
+      <Stagger className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-16 lg:gap-5">
         {specialities.map((s) => {
           const Icon = specialityIcons[s.icon as keyof typeof specialityIcons]
           return (
@@ -53,6 +53,19 @@ export default function Specialities() {
               {s.title}
             </h3>
             <p className="relative mt-2.5 text-[0.93rem] leading-relaxed text-[#9fb0d8]">{s.body}</p>
+
+            {'tags' in s && (
+              <ul className="relative mt-4 flex flex-wrap gap-1.5">
+                {s.tags.map((t) => (
+                  <li
+                    key={t}
+                    className="rounded-md border border-white/[0.08] bg-white/[0.03] px-2 py-0.5 text-[0.7rem] text-[#9fb0d8]"
+                  >
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            )}
 
             {/* underline that grows on hover */}
             <span className="relative mt-5 block h-px w-10 bg-gradient-to-r from-[#1d5cff] to-transparent transition-all duration-500 group-hover:w-full" />

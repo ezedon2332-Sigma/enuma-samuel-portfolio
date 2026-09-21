@@ -12,13 +12,11 @@ import {
   MapPin,
   MessageCircle,
   MessagesSquare,
-  MonitorSmartphone,
   Palette,
   PencilRuler,
   PenTool,
   Phone,
   Rocket,
-  Server,
 } from 'lucide-react'
 
 type P = { className?: string }
@@ -58,13 +56,11 @@ export const socialIcons = {
   mail: Mail,
 } as const
 
-/** The six specialities. */
+/** The four specialities. */
 export const specialityIcons = {
   writing: PenTool,
   realEstate: House,
   webDev: Blocks,
-  frontend: MonitorSmartphone,
-  backend: Server,
   design: Palette,
 } as const
 

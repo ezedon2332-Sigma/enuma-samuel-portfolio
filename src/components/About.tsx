@@ -15,7 +15,7 @@ export default function About() {
           <Reveal delay={0.2}>
             <div className="mt-10 rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-7">
               <p className="font-script text-[1.6rem] leading-tight text-[#6fb4ff]">
-                “Six skills, one accountable person.”
+                “Four skills, one accountable person.”
               </p>
               <p className="mt-3 text-[0.9rem] text-[#9fb0d8]">
                 The writing sharpens the design, the design sharpens the code, and real estate
