@@ -161,10 +161,10 @@ export const projects: Project[] = [
 ]
 
 export const designWork = [
-  { src: '/media/design-fancy-finery.webp', alt: 'Fancy Finery — fashion brand flyer' },
   { src: '/media/design-nexora-pulse.webp', alt: 'Nexora Pulse X1 — product launch campaign' },
+  { src: '/media/design-fips-break-pattern.webp', alt: 'FIPS Real Estate — Break the Pattern' },
   { src: '/media/design-sigma-car-charger.webp', alt: 'Sigma — car charger product ad' },
-  { src: '/media/design-ileri-amenities.webp', alt: 'Ileri Residence — amenities creative' },
+  { src: '/media/design-ileri-concrete.webp', alt: 'Ileri Residence — Concrete Structures campaign' },
 ] as const
 
 export const properties = [
