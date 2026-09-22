@@ -89,6 +89,8 @@ export type Project = {
   image?: string
   /** Book covers are portrait — 'contain' stops a 16:10 card cropping them. */
   fit?: 'cover' | 'contain'
+  /** The client this work was done with, shown as a small logo credit. */
+  credit?: { logo: string; name: string }
   stack?: string[]
 }
 
@@ -152,10 +154,11 @@ export const projects: Project[] = [
   {
     tag: 'Real estate',
     title: 'Lekki & Ajah residential sales',
-    body: 'Off-plan apartments, land and rentals, sold with FIPS Multilinks. Titles and documentation are checked before anyone signs anything.',
+    body: 'Off-plan apartments, land and rentals. Titles and documentation are checked before anyone signs anything.',
     cta: 'See FIPS Multilinks',
     // the profile URL without the ?stkn= share token, which is tied to a session
     href: 'https://www.instagram.com/fipsmultilinks',
+    credit: { logo: '/media/logo-fips.webp', name: 'FIPS Multilinks' },
   },
   {
     tag: 'Real estate',

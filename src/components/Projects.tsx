@@ -105,6 +105,21 @@ function Card({ project, groupKey }: { project: Project; groupKey: string }) {
           </ul>
         )}
 
+        {p.credit && (
+          <div className="mt-5 flex items-center gap-3 border-t border-white/[0.07] pt-4">
+            <img
+              src={p.credit.logo}
+              alt={p.credit.name}
+              loading="lazy"
+              decoding="async"
+              className="h-6 w-auto opacity-90"
+            />
+            <span className="text-[0.7rem] tracking-[0.12em] text-[#8f9ec4] uppercase">
+              Sold with {p.credit.name}
+            </span>
+          </div>
+        )}
+
         <div className="mt-auto">
           {p.href.startsWith('/') ? (
             <Link to={p.href} className={ctaClass}>
