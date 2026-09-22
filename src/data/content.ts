@@ -89,8 +89,12 @@ export type Project = {
   image?: string
   /** Book covers are portrait — 'contain' stops a 16:10 card cropping them. */
   fit?: 'cover' | 'contain'
-  /** The client this work was done with, shown as a small logo credit. */
-  credit?: { logo: string; name: string }
+  /**
+   * The client this work was done with, shown as a small logo credit.
+   * `plate` is the backing the mark needs — 'dark' for a white logo,
+   * 'light' for a dark one — so both stay legible on a dark card.
+   */
+  credit?: { logo: string; name: string; plate: 'light' | 'dark' }
   stack?: string[]
 }
 
@@ -158,14 +162,16 @@ export const projects: Project[] = [
     cta: 'See FIPS Multilinks',
     // the profile URL without the ?stkn= share token, which is tied to a session
     href: 'https://www.instagram.com/fipsmultilinks',
-    credit: { logo: '/media/logo-fips.webp', name: 'FIPS Multilinks' },
+    credit: { logo: '/media/logo-fips.webp', name: 'FIPS Multilinks', plate: 'dark' },
   },
   {
     tag: 'Real estate',
     title: 'Diaspora buyer packages',
     body: 'End-to-end purchase management: inspection videos, legal verification and staged payment tracking for clients abroad.',
-    cta: 'See the portfolio',
-    href: '#properties',
+    cta: 'See Zylus Homes',
+    // the profile URL without the ?stkn= share token, which is tied to a session
+    href: 'https://www.instagram.com/zylushomes',
+    credit: { logo: '/media/logo-zylus.webp', name: 'Zylus Homes', plate: 'light' },
   },
 ]
 
