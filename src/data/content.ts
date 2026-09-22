@@ -162,6 +162,9 @@ export const projects: Project[] = [
     cta: 'See FIPS Multilinks',
     // the profile URL without the ?stkn= share token, which is tied to a session
     href: 'https://www.instagram.com/fipsmultilinks',
+    // portrait sales flyer, same 'contain' fit as the Zylus card
+    image: '/media/prop-gold-mark-fips.webp',
+    fit: 'contain',
     credit: { logo: '/media/logo-fips.webp', name: 'FIPS Multilinks', plate: 'dark' },
   },
   {
