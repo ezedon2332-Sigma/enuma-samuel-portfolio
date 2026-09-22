@@ -171,6 +171,10 @@ export const projects: Project[] = [
     cta: 'See Zylus Homes',
     // the profile URL without the ?stkn= share token, which is tied to a session
     href: 'https://www.instagram.com/zylushomes',
+    // a portrait sales flyer — 'contain' keeps the whole layout rather than
+    // cropping the estate branding off the top and bottom
+    image: '/media/prop-lekki-avana-zylus.webp',
+    fit: 'contain',
     credit: { logo: '/media/logo-zylus.webp', name: 'Zylus Homes', plate: 'light' },
   },
 ]
