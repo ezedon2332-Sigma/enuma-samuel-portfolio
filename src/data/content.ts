@@ -141,7 +141,7 @@ export const projects: Project[] = [
     fit: 'contain',
   },
   {
-    tag: 'Writing — Published book',
+    tag: 'Writing — Published guide',
     title: 'The Complete Dangote Refinery IPO Guide',
     body: "A plain-English walkthrough of buying shares in Africa's biggest IPO, written for people who have never invested before — which apps to use, how the BVN and CSCS steps actually work, and how to spot the scams that follow an offer like this around.",
     cta: 'Get the guide',
