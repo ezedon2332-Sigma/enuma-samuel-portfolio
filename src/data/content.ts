@@ -152,9 +152,10 @@ export const projects: Project[] = [
   {
     tag: 'Real estate',
     title: 'Lekki & Ajah residential sales',
-    body: 'Off-plan apartments, land banking and rentals — every deal closed with verified titles and documentation support.',
-    cta: 'See the portfolio',
-    href: '#properties',
+    body: 'Off-plan apartments, land and rentals, sold with FIPS Multilinks. Titles and documentation are checked before anyone signs anything.',
+    cta: 'See FIPS Multilinks',
+    // the profile URL without the ?stkn= share token, which is tied to a session
+    href: 'https://www.instagram.com/fipsmultilinks',
   },
   {
     tag: 'Real estate',
