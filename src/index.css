@@ -229,6 +229,17 @@
   animation-play-state: paused;
 }
 
+/* Nav links scroll a section flush to the viewport top, where the fixed header
+   would sit on top of its eyebrow and title. This keeps it clear — the header
+   is 75px, so the margin has to beat that on every breakpoint. */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+/* the hero is the top of the page; it wants no offset */
+section#top {
+  scroll-margin-top: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -32,7 +32,7 @@ export default function Home() {
         accent="portfolio"
         body="Homes and developments handled — sales, marketing and buyer management across Lagos and Ibadan."
         items={properties}
-        columns="wide"
+        shape="photo"
       />
 
       <About />

@@ -11,7 +11,7 @@ export default function Gallery({
   accent,
   body,
   items,
-  columns = 'gallery',
+  shape = 'poster',
 }: {
   id: string
   eyebrow: string
@@ -19,16 +19,22 @@ export default function Gallery({
   accent: string
   body: string
   items: readonly Shot[]
-  columns?: 'gallery' | 'wide'
+  /** 'poster' frames 3:4 artwork; 'photo' squares off a mixed set of snapshots. */
+  shape?: 'poster' | 'photo'
 }) {
   const [open, setOpen] = useState<number | null>(null)
 
-  // design work is portrait-ish, property shots are landscape
-  const grid =
-    columns === 'wide'
-      ? 'grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
-      : 'grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
-  const ratio = columns === 'wide' ? 'aspect-[4/3]' : 'aspect-square'
+  const grid = 'grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
+
+  /**
+   * The frame has to follow the artwork, because object-cover crops whatever
+   * does not fit. Every design piece is a ~3:4 social poster, so it gets that
+   * ratio exactly — a square frame was slicing a quarter off the top and
+   * bottom, which cost the Happiness campaign its "The Final End" line. The
+   * property set is mixed 3:4 and 4:3, so a square splits the difference and
+   * each shot loses about a quarter rather than the portraits losing half.
+   */
+  const ratio = shape === 'photo' ? 'aspect-square' : 'aspect-[3/4]'
 
   return (
     <Section id={id}>
@@ -52,8 +58,9 @@ export default function Gallery({
               className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.09]"
             />
 
-            {/* caption veil */}
-            <span className="absolute inset-0 bg-gradient-to-t from-[#04060f] via-[#04060f]/25 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-95" />
+            {/* caption veil — only while the caption is actually showing, so the
+                artwork is not permanently dimmed by a third of a stop */}
+            <span className="absolute inset-0 bg-gradient-to-t from-[#04060f] via-[#04060f]/25 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-95" />
             <span className="absolute inset-x-0 bottom-0 translate-y-2 p-3 text-left text-[0.72rem] leading-snug text-white/0 transition-all duration-500 group-hover:translate-y-0 group-hover:text-white/90 sm:text-[0.78rem]">
               {shot.alt}
             </span>

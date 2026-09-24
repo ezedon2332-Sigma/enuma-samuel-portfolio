@@ -84,6 +84,11 @@ export function Stagger({
  * the animated spans' transforms create a new containing block, so the clipped
  * background never paints over them while `color: transparent` still inherits
  * down — leaving the text invisible.
+ *
+ * The whole animated run is hidden from assistive tech and the real string is
+ * exposed once, off-screen. `aria-label` cannot do that job here: a plain
+ * <span> has no role, and ARIA ignores labels on unrolled generic elements —
+ * so with every word marked aria-hidden the heading came out nameless.
  */
 export function SplitWords({
   text,
@@ -99,29 +104,31 @@ export function SplitWords({
   const words = text.split(' ').filter(Boolean)
 
   return (
-    <motion.span
-      className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: '-10%' }}
-      variants={{ show: { transition: { staggerChildren: 0.055, delayChildren: delay } } }}
-      aria-label={text}
-    >
-      {words.map((w, i) => (
-        <span key={`${w}-${i}`} className="inline-block overflow-hidden align-bottom">
-          <motion.span
-            className={`inline-block ${wordClassName}`}
-            aria-hidden
-            variants={{
-              hidden: { y: '110%', opacity: 0 },
-              show: { y: '0%', opacity: 1, transition: { duration: 0.85, ease: EASE } },
-            }}
-          >
-            {w}
-            {'\u00A0'}
-          </motion.span>
-        </span>
-      ))}
-    </motion.span>
+    <>
+      <span className="sr-only">{text}</span>
+      <motion.span
+        className={className}
+        aria-hidden
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: '-10%' }}
+        variants={{ show: { transition: { staggerChildren: 0.055, delayChildren: delay } } }}
+      >
+        {words.map((w, i) => (
+          <span key={`${w}-${i}`} className="inline-block overflow-hidden align-bottom">
+            <motion.span
+              className={`inline-block ${wordClassName}`}
+              variants={{
+                hidden: { y: '110%', opacity: 0 },
+                show: { y: '0%', opacity: 1, transition: { duration: 0.85, ease: EASE } },
+              }}
+            >
+              {w}
+              {'\u00A0'}
+            </motion.span>
+          </span>
+        ))}
+      </motion.span>
+    </>
   )
 }

@@ -78,8 +78,16 @@ export default function Hero() {
 
           {/* name */}
           <h1 className="mt-5 font-display text-[clamp(2.4rem,8.4vw,5.4rem)] leading-[0.95] font-bold tracking-[-0.02em] uppercase [text-shadow:0_2px_30px_rgba(4,6,15,0.9)]">
+            {/* the two words are separate boxes so each can slide up on its own;
+                nothing between them is real whitespace, so the readable name
+                is supplied once here instead of coming out as "EnumaSamuel" */}
+            <span className="sr-only">{profile.name}</span>
             {['Enuma', 'Samuel'].map((word, i) => (
-              <span key={word} className="inline-block overflow-hidden px-[0.1em] align-bottom">
+              <span
+                key={word}
+                aria-hidden
+                className="inline-block overflow-hidden px-[0.1em] align-bottom"
+              >
                 <motion.span
                   className={`inline-block ${i === 1 ? 'text-gradient' : ''}`}
                   initial={{ y: '110%' }}

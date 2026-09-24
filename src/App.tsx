@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { MotionConfig } from 'framer-motion'
 import { useSmoothScroll } from './lib/hooks'
 
 import Preloader from './components/Preloader'
@@ -68,8 +69,15 @@ function Shell() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Shell />
-    </BrowserRouter>
+    /**
+     * The stylesheet's reduced-motion block only reaches CSS animations and
+     * transitions. Everything here that moves is a Framer transform, which it
+     * never sees — so the preference is honoured at the source instead.
+     */
+    <MotionConfig reducedMotion="user">
+      <BrowserRouter>
+        <Shell />
+      </BrowserRouter>
+    </MotionConfig>
   )
 }
